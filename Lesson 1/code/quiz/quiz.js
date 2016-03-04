@@ -22,7 +22,7 @@ describe('Guess the value of the variable', function () {
 			b = 3;
 		}
         
-		expect(b).toBe(); //!!!!!!!!!!!!!!!!!
+		expect(b).toBe(12); //!!!!!!!!!!!!!!!!!
 	});
 
 	it('Question 4', function () {
