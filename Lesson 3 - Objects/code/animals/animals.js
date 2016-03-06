@@ -4,10 +4,27 @@
 	if (!global.UAM) {
 		global.UAM = {};
 	}
-
-	global.UAM.Cat = Cat;
+    
+    
+    var Animal = {
+        food: null,
+        eat: function(meal){
+            if(Object.getPrototypeOf(meal) === Object.getPrototypeOf(Animal.food)){
+                return "Mniam!";
+            }else{
+                return "Blee!";
+            }
+        }
+    }
+    
+    Cat = Object.create(Animal);
+    Cat.food = Object.create(Bird);
+    
+    
+    global.UAM.Cat = Cat;
 	global.UAM.Bird = Bird;
 	global.UAM.Worm = Worm;
+   
 
 }(window));
 
