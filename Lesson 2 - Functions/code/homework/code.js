@@ -35,7 +35,7 @@
 
     global.UAM.removeAircraft = function (aircraftObj) {
         // !!!
-        if( global.UAM.aircrafts.indexOf(aircraftObj)>0){
+        if( global.UAM.aircrafts.indexOf(aircraftObj)>=0){
             global.UAM.aircrafts.splice( global.UAM.aircrafts.indexOf(aircraftObj), 1 );
         }
         
@@ -43,26 +43,37 @@
 
     global.UAM.addWorkToAircraft = function(aircraftObj, name, timeToExxecute) {
         // !!!
-        global.UAM.aircrafts[global.UAM.aircrafts.indexOf(aircraftObj)].services.push({
+        aircraftObj.services.push({
         name: name,
         timeToExecute: timeToExxecute
     });
     };
         
-    global.UAM.reduceTimeToExecute = function(time) {
+    global.UAM.reduceTimeToExecute = function(aircraftObj, time) {
         // !!!
+       
     };
     
     global.UAM.getAircraftsForRepairs = function(maxTimeToExecute) {
         // !!!
-        var repairs = [];
-        for(var i=0; i<global.UAM.aircrafts.lenght; i++){
-            if(global.UAM.aircrafts[i].services.timeToExecute <= maxTimeToExecute){
-               repairs.push(global.UAM.aircrafts[i]);
+        /*var repairs = new Array();
+        var aircraftObj;
+       for(var i=0; i<global.UAM.aircrafts.lenght; i++){
+            if(global.UAM.aircrafts[i].services.timeToExecute < maxTimeToExecute){
+               aircraftObj = global.UAM.aircrafts[i]
+               repairs.push(aircraftObj);
             }
         }
-        return repairs;
-    };
+        return repairs;*/
+       /* var filtered = new Array();
+        
+        function fromRepair(aircraftObj, maxTimeToExecute) {
+            return (aircraftObj.services.timeToExecute < maxTimeToExecute);
+        }
+        
+        filtered = global.UAM.aircrafts.filter(fromRepair);
+        return filtered;  */
+   };
 
 }(window));
 
