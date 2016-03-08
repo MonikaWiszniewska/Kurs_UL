@@ -5,10 +5,15 @@ window.addEventListener('DOMContentLoaded', function () {
     var even = document.getElementById("even");
     
     sub.addEventListener('click', function () {
-        if(odd.childNodes... % 2 == 1){
-            
+        if(odd.value % 2 == 1){
+            odd.classList.add('valid');
         }else{
-            
+            odd.classList.add('invalid');
+        }
+        if(even.value % 2 == 0){
+            even.classList.add('valid');
+        }else {
+            even.classList.add('invalid');
         }
     });
 
