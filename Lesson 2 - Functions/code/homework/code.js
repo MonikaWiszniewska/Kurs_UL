@@ -52,25 +52,26 @@
     global.UAM.reduceTimeToExecute = function(aircraftObj, time) {
         // !!!
         if( global.UAM.aircrafts.indexOf(aircraftObj)>=0){
-            aircraftObj.services.filter(function(element){
-                element.timeToExecute -= time;
-             })
+            if(aircraftObj.services !==null){
+                aircraftObj.services.filter(function(element){
+                    element.timeToExecute -= time;
+                })
+              }
             }
         };
-       
    
-    
     global.UAM.getAircraftsForRepairs = function(maxTimeToExecute) {
         // !!!
         var repairs = new Array();
         
         global.UAM.aircrafts.filter(function(obj){
+            if(obj.services !==null){
             if(obj.services.some(function(element){
                 return element.timeToExecute <= maxTimeToExecute;
             })){
                 repairs.push(obj);
             }
-        })
+        }})
         return repairs;        
    };
 
