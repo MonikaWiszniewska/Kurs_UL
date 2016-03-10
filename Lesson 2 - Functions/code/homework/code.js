@@ -51,28 +51,27 @@
         
     global.UAM.reduceTimeToExecute = function(aircraftObj, time) {
         // !!!
+        if( global.UAM.aircrafts.indexOf(aircraftObj)>=0){
+            aircraftObj.services.filter(function(element){
+                element.timeToExecute -= time;
+             })
+            }
+        };
        
-    };
+   
     
     global.UAM.getAircraftsForRepairs = function(maxTimeToExecute) {
         // !!!
-        /*var repairs = new Array();
-        var aircraftObj;
-       for(var i=0; i<global.UAM.aircrafts.lenght; i++){
-            if(global.UAM.aircrafts[i].services.timeToExecute < maxTimeToExecute){
-               aircraftObj = global.UAM.aircrafts[i]
-               repairs.push(aircraftObj);
+        var repairs = new Array();
+        
+        global.UAM.aircrafts.filter(function(obj){
+            if(obj.services.some(function(element){
+                return element.timeToExecute <= maxTimeToExecute;
+            })){
+                repairs.push(obj);
             }
-        }
-        return repairs;*/
-       /* var filtered = new Array();
-        
-        function fromRepair(aircraftObj, maxTimeToExecute) {
-            return (aircraftObj.services.timeToExecute < maxTimeToExecute);
-        }
-        
-        filtered = global.UAM.aircrafts.filter(fromRepair);
-        return filtered;  */
+        })
+        return repairs;        
    };
 
 }(window));
