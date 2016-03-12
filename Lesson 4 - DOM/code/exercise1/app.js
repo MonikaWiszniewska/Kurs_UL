@@ -6,13 +6,17 @@ window.addEventListener('DOMContentLoaded', function () {
     
     sub.addEventListener('click', function () {
         if(odd.value % 2 == 1){
+            odd.classList.remove('invalid');
             odd.classList.add('valid');
         }else{
+            odd.classList.remove('valid');
             odd.classList.add('invalid');
         }
         if(even.value % 2 == 0){
+            even.classList.remove('invalid');
             even.classList.add('valid');
         }else {
+            even.classList.remove('valid');
             even.classList.add('invalid');
         }
     });
