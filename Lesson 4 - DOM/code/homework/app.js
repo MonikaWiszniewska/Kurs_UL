@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Create area and ship as `div` in `document` node
     var playArea = document.createElement('div'),
-        ship = document.createElement('div')
+        ship = document.createElement('div');
 
     var key = {
         right: false,
@@ -99,12 +99,8 @@ window.addEventListener('DOMContentLoaded', function () {
     // add event listeners observers for both `keydown` and `keyup` events
     // using 'keydown' and 'keyup' functions provided above
 
-    document.addEventListener('keyDown', function (event) {
-        keyDown(event);
-    }, false);
-    document.addEventListener('keyUp', function (event) {
-        keyUp(event);
-    }, false);
+    document.addEventListener('keydown', keyDown, false);
+    document.addEventListener('keyup', keyUp, false);
 
     // Main game loop
     function loop() {
