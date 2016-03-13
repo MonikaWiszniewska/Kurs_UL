@@ -1,8 +1,8 @@
 (function (global) {
 	var Cat = {}, Bird = {}, Worm = {};
 
-    
-    Cat.eat = function(a){
+     
+   Cat.eat = function(a){
             if(Object.getPrototypeOf(a) === Object.getPrototypeOf(Object.create(Bird))){
                 return "Mniam!";
             } else {
@@ -18,10 +18,10 @@
             }
     }
 
-    Worm.eat = function(type){
+    Worm.eat = function(a){
                 return "Blee!";
     }
-
+    
 	if (!global.UAM) {
 		global.UAM = {};
 	}
