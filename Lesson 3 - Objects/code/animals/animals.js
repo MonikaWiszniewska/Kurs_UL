@@ -1,15 +1,7 @@
 (function (global) {
-	var Cat = null, Bird = null, Worm = null;
-
-	if (!global.UAM) {
-		global.UAM = {};
-	}
-    
-    
-   (function (global) {
 	var Cat = {}, Bird = {}, Worm = {};
-    
 
+    
     Cat.eat = function(a){
             if(Object.getPrototypeOf(a) === Object.getPrototypeOf(Object.create(Bird))){
                 return "Mniam!";
@@ -18,8 +10,8 @@
             }
     }
 
-    Bird.eat = function(type){
-            if(type == 'worm'){
+    Bird.eat = function(a){
+            if(Object.getPrototypeOf(a) === Object.getPrototypeOf(Object.create(Worm))){
                 return "Mniam!";
             } else {
                 return "Blee!";
@@ -37,14 +29,6 @@
 	global.UAM.Cat = Cat;
 	global.UAM.Bird = Bird;
 	global.UAM.Worm = Worm;
-
-}(window));
-    
-    
-    global.UAM.Cat = Cat;
-	global.UAM.Bird = Bird;
-	global.UAM.Worm = Worm;
-   
 
 }(window));
 
