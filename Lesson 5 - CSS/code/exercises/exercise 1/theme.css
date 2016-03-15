@@ -1,3 +1,7 @@
 .row {
     display: block;
 }
+
+#first.column h1{
+    color:blue;
+}
