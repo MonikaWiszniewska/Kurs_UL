@@ -11,6 +11,7 @@
     }
 
 	global.UAM.newObject = newObject;
+    
    
 }(window));
 
